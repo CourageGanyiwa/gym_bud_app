@@ -33,7 +33,9 @@
           <div class="avatar avatar--medium active">
             <img src="{% static 'images/avatar.svg' %}" />
           </div>
-          <p>{{request.user}}<span>@{{request.user.username}}</span></p>
+          <p>
+            <span>{{request.user|capfirst}}</span>
+          </p>
         </a>
         <button class="dropdown-button">
           <svg
