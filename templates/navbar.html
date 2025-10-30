@@ -2,7 +2,10 @@
 <header class="header header--loggedIn">
   <div class="container">
     <a href="{% url 'home' %}" class="header__logo">
-      <img src="{% static 'images/favicon.ico' %}" />
+      <img
+        src="{% static 'images/my_icon.jpg' %}"
+        style="border-radius: 50px"
+      />
       <h1>Gym Bud</h1>
     </a>
     <form class="header__search" method="get" action="{% url 'home' %}">
@@ -84,7 +87,7 @@
       {% else %}
       <!-- Not Logged In -->
       <a href="{% url 'login' %}">
-        <img src="" />
+        <img src="{% static 'images/avatar.svg' %}" />
         <p>Login</p>
       </a>
       {% endif %}
