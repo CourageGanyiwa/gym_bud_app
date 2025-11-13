@@ -12,20 +12,18 @@
     let container = document.querySelector(".site-container");
 
     let getRooms = async () => {
-      let response = await fetch(
-        "http://www.themealdb.com/api/json/v1/1/search.php?s=pepperonipizza"
-      );
+      let response = await fetch("http://localhost:8000/api/rooms/");
       let data = await response.json();
 
       console.log(data);
 
-      //   for (let i = 0; i < data.length; i++) {
-      //     console.log(data[i].description);
-      //     container.innerHTML += `<div>
-      //     <h2>${data[i].name}</h2>
-      //     <p>${data[i].description}</p>
-      //     </div> `;
-      //   }
+      for (let i = 0; i < data.length; i++) {
+        console.log(data[i].description);
+        container.innerHTML += `<div>
+          <h2>${data[i].name}</h2>
+          <p>${data[i].description}</p>
+          </div> `;
+      }
     };
 
     getRooms();

@@ -166,7 +166,7 @@ def userProfile(request, pk):
     topics = Topic.objects.all()
     context = {
         'user': user,
-        'rooms': rooms,
+        'user_rooms': rooms,
         'topics': topics,
         'room_messages': room_messages
     }
