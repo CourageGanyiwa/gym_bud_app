@@ -32,7 +32,7 @@
           </div>
 
           <a href="{% url 'user-profile' request.user.id %}"
-            ><p><span>{{request.user|capfirst}}</span></p></a
+            ><p><span>{{user.username|capfirst}}</span></p></a
           >
         </a>
         <button class="dropdown-button">

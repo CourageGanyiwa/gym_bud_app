@@ -17,12 +17,16 @@
                     </div>
                 </div>
                 <div class="layout__body">
-                    <form class="form" action="#">
-                        <div class="form__group">
-                            <label for="profile_pic">Avatar</label>
-                            <input id="profile_pic" name="profile_pic" type="file" />
-                        </div>
+                    <form class="form" action="" method="post">
+                        {% csrf_token %}
+                        {% for field in form %}
 
+
+                        <div class="form__group">
+                            <label for="profile_pic">{{field.label}}</label>
+                            {{field}}
+                        </div>
+<!-- 
               <div class="form__group">
                 <label for="username">Username</label>
                 <input id="username" name="username" type="text" placeholder="E.g. John doe" />
@@ -36,7 +40,8 @@
                         <div class="form__group">
                             <label for="user_bio">Bio</label>
                             <textarea name="user_bio" id="user_bio" placeholder="Write about yourself..."></textarea>
-                        </div>
+                        </div> -->
+                        {% endfor %}
                         <div class="form__action">
                             <a class="btn btn--dark" href="{{ request.META.HTTP_REFERER }}">Cancel</a>
                             <button class="btn btn--main" type="submit">Update</button>

@@ -11,10 +11,10 @@
       <div class="layout__body">
         <h2 class="auth__tagline">Find a gym partner</h2>
 
-        <form class="form" action="" method="POST">
+        <form class="form" action="" method="post">
           {% csrf_token %}
           <div class="form__group form__group">
-            <label for="room_name">Username</label>
+            <label for="room_name">User Email</label>
             <input
               id="username"
               name="username"
@@ -69,13 +69,29 @@
         </div>
       </div>
       <div class="layout__body">
-        <h2 class="auth__tagline">Find your study partner</h2>
+        <h2 class="auth__tagline">Find your Gym partner</h2>
 
-        <form class="form" action="" method="POST">
+        <form class="form" action="" method="post" autocomplete="off">
           {% csrf_token %} {% for field in form %}
           <div class="form__group form__group">
-            <label for="room_name">{{field.label}}</label>
-            {{field}}
+            <label for="{{field.id_for_label}}">{{field.label}}</label>
+            {% if field.field.widget.input_type == 'password' %}
+            <input
+              type="password"
+              id="{{field.id_for_label}}"
+              name="{{field.name}}"
+              placeholder="{{field.label}}"
+              autocomplete="new-password"
+            />
+            {% else %}
+            <input
+              type="text"
+              id="{{field.id_for_label}}"
+              name="{{field.name}}"
+              placeholder="{{field.label}}"
+              autocomplete="off"
+            />
+            {% endif %}
           </div>
           {% endfor %}
 
@@ -102,7 +118,7 @@
 
         <div class="auth__action">
           <p>Already signed up yet?</p>
-          <a href="{% url 'login' %}" class="btn btn--link">Sign Up</a>
+          <a href="{% url 'login' %}" class="btn btn--link">Login</a>
         </div>
       </div>
     </div>
