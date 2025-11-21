@@ -10,7 +10,7 @@
         class="roomListRoom__author"
       >
         <div class="avatar avatar--small">
-          <img src="{{message.user.avatar_url|user.avatar_url}}" />
+          <img src="{{% static 'images/avatar.svg' %}}" />
         </div>
         <p>
           {{message.user.username|capfirst}}
