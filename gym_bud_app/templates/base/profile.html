@@ -11,7 +11,7 @@
         <div class="profile">
           <div class="profile__avatar">
             <div class="avatar avatar--large active">
-              <img src="{{user.avatar.url}}" />
+              <img src="{{user.avatar_url}}" />
             </div>
           </div>
           <div class="profile__info">
@@ -40,7 +40,7 @@
           <div class="roomListRoom__header">
             <a href="{% url 'user-profile' room.host.id %}" class="roomListRoom__author">
               <div class="avatar avatar--small active">
-                <img src="{{user.avatar.url}}" />
+                <img src="{{user.avatar_url}}" />
               </div>
               <span>@{{user.username}}</span>
             </a>
