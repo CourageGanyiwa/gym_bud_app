@@ -32,7 +32,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-unsafe-default-for-dev')
 DEBUG = os.getenv('DEBUG', 'True').lower() in ('true', '1')
 
 # Allow hosts from environment (comma separated) or default to localhost
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost,127.0.0.1', 'gym-bud-wl29.onrender.com').split(',')
 
 
 # Application definition
