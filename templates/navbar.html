@@ -4,7 +4,7 @@
     <a href="{% url 'home' %}" class="header__logo">
       <img
         src="https://res.cloudinary.com/du238xjtt/image/upload/v1763755373/logo_mtnxgt.png"
-        style="border-radius: 50px"
+        style="border-radius: 50px; width: 40px; height: 40px"
       />
       <h1>Gym Bud</h1>
     </a>
@@ -35,7 +35,7 @@
           </div>
 
           <a href="{% url 'user-profile' request.user.id %}"
-            ><p><span>{{user.username|capfirst}}</span></p></a
+            ><p><span>{{request.user.username|capfirst}}</span></p></a
           >
         </a>
         <button class="dropdown-button">
@@ -90,7 +90,9 @@
       {% else %}
       <!-- Not Logged In -->
       <a href="{% url 'login' %}">
-        <img src="{% static 'images/avatar.svg' %}" />
+        <img
+          src="https://res.cloudinary.com/du238xjtt/image/upload/v1763757297/avatar_juw0bq.svg"
+        />
         <p>Login</p>
       </a>
       {% endif %}
