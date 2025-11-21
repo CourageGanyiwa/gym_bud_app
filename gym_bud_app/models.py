@@ -28,6 +28,14 @@ class CustomUserManager(BaseUserManager):
 
 
 class User(AbstractUser):
+
+    @property
+    def avatar_url(self):
+        if self.avatar and hasattr(self.avatar, 'url'):
+            return self.avatar.url
+        return 'https://res.cloudinary.com/du238xjtt/image/upload/v1234567890/default_avatar.svg'
+    
+
     name = models.CharField(max_length=200,null=True)
     email = models.EmailField(unique=True)
     bio = models.TextField(null=True)
