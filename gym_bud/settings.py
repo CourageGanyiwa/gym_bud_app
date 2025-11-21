@@ -15,6 +15,9 @@ import os
 from dotenv import load_dotenv
 import dj_database_url
 from urllib.parse import urlparse
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -47,6 +50,8 @@ INSTALLED_APPS = [
     'gym_bud_app',
     'rest_framework',
     'corsheaders',
+    "cloudinary",
+    "cloudinary_storage",
 ]
 
 AUTH_USER_MODEL = 'gym_bud_app.User'
@@ -149,9 +154,20 @@ STATICFILES_DIRS = [
 
 
 # Media (user uploaded) files
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = BASE_DIR / 'media'
+# Use Cloudinary for media files
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
+# Optional: static files too
+# STATICFILES_STORAGE = "cloudinary_storage.storage.StaticHashedCloudinaryStorage"
+
+# If you want, you can explicitly parse CLOUDINARY_URL from env
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME', 'du238xjtt'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET')
+)
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
