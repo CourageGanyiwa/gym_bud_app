@@ -54,6 +54,7 @@ AUTH_USER_MODEL = 'gym_bud_app.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -91,16 +92,16 @@ WSGI_APPLICATION = 'gym_bud.wsgi.application'
 DATABASE_URL = os.getenv('DATABASE_URL')
 
 # `if DATABASE_URL:
-#     DATABASES = {
-#         'default': dj_database_url.parse(DATABASE_URL)
-#     }
-# else:`
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+        'default': dj_database_url.parse(DATABASE_URL)
     }
+# # else:`
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
 
 
 # Password validation
@@ -145,6 +146,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Media (user uploaded) files
 MEDIA_URL = '/media/'
