@@ -33,7 +33,7 @@ class User(AbstractUser):
     def avatar_url(self):
         if self.avatar and hasattr(self.avatar, 'url'):
             return self.avatar.url
-        return 'https://res.cloudinary.com/du238xjtt/image/upload/v1234567890/default_avatar.svg'
+        return 'https://res.cloudinary.com/du238xjtt/image/upload/v1763757297/avatar_juw0bq.svg'
     
 
     name = models.CharField(max_length=200,null=True)
