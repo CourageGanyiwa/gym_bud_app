@@ -1,5 +1,5 @@
 :root {
-  --color-main: #444746;
+  --color-main: #4447468c;
   --color-main-light: #e1f6fb;
   --color-dark: #e1f6fb;
   --color-dark-medium: #2b3cd3;
@@ -7,7 +7,7 @@
   --color-light: #9bc4b3;
   --color-gray: #8b8b8b;
   --color-light-gray: #b2bdbd;
-  --color-bg: #0a905c;
+  --color-bg: #444746;
   --color-success: #5dd693;
   --color-error: #fc4b0b;
 }
@@ -265,7 +265,7 @@ a {
 
 .header {
   padding: 1.5rem;
-  background-color: blue;
+  background-color: rgb(240, 240, 243);
 }
 
 .header > .container {
