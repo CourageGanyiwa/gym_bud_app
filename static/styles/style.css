@@ -1,14 +1,14 @@
 :root {
-  --color-main: #4447468c;
+  --color-main: #161817fb;
   --color-main-light: #e1f6fb;
   --color-dark: #e1f6fb;
-  --color-dark-medium: #2b3cd3;
+  --color-dark-medium: #e1f6fb;
   --color-dark-light: #4a53b5;
   --color-light: #9bc4b3;
   --color-gray: #8b8b8b;
   --color-light-gray: #b2bdbd;
-  --color-bg: #444746;
-  --color-success: #5dd693;
+  --color-bg: #161817fb;
+  --color-success: #59ed9c;
   --color-error: #fc4b0b;
 }
 
@@ -265,7 +265,7 @@ a {
 
 .header {
   padding: 1.5rem;
-  background-color: rgb(240, 240, 243);
+  background-color: white;
 }
 
 .header > .container {
@@ -312,7 +312,7 @@ a {
   background: transparent;
   border: none;
   outline: none;
-  color: var(--color-light);
+  color: crimson;
 }
 
 @media screen and (max-width: 800px) {
