@@ -6,7 +6,11 @@
         src="https://res.cloudinary.com/du238xjtt/image/upload/v1763755373/logo_mtnxgt.png"
         style="border-radius: 50px; width: 40px; height: 40px"
       />
-      <h1>Gym Bud</h1>
+      <img
+        src="https://res.cloudinary.com/du238xjtt/image/upload/v1763771852/gym-bud_logo_hjqizz.png"
+        alt=""
+        style="width: 55px; height: 55px"
+      />
     </a>
     <form class="header__search" method="get" action="{% url 'home' %}">
       <label>
@@ -31,7 +35,15 @@
       <div class="header__user">
         <a href="{% url 'user-profile' request.user.id %}">
           <div class="avatar avatar--medium active">
-            <img src="{{ request.user.avatar_url }}" />
+            <img
+              src="{{ request.user.avatar_url }}"
+              style="
+                display: flex;
+                width: 40px;
+                height: 40px;
+                align-self: flex-end;
+              "
+            />
           </div>
 
           <a href="{% url 'user-profile' request.user.id %}"
