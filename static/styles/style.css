@@ -282,13 +282,17 @@ nav {
 .header > .container {
   display: flex;
   gap: 9.5rem;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .header__logo,
 .header__user {
   display: flex;
+  margin-left: auto;
   gap: 2rem;
-  align-items: center;
+  align-items: stretch;
+  justify-content: center;
 }
 
 .header__logo > img {
@@ -699,7 +703,7 @@ nav {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
-  color: var(--color-light);
+  color: #2349d2;
   transition: all 0.3s ease-in-out;
 }
 
