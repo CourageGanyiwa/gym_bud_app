@@ -283,13 +283,12 @@ nav {
   display: flex;
   gap: 9.5rem;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .header__logo,
 .header__user {
   display: flex;
-  margin-left: auto;
   gap: 2rem;
   align-items: stretch;
   justify-content: center;
