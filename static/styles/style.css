@@ -445,6 +445,7 @@ nav {
   position: absolute;
   top: 55%;
   left: 50%;
+  margin-top: 20%;
   transform: translate(-50%, -46%);
   background-color: var(--color-dark);
   border-radius: 1rem;
