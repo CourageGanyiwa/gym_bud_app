@@ -283,6 +283,7 @@ nav {
   display: flex;
   gap: 9.5rem;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header__logo,
