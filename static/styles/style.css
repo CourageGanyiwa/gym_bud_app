@@ -272,7 +272,7 @@ nav {
 
 .header {
   padding: 1.5rem;
-  background-color: white;
+  background-color: rgb(74, 21, 198);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -283,7 +283,6 @@ nav {
   display: flex;
   gap: 9.5rem;
   align-items: center;
-  justify-content: center;
 }
 
 .header__logo,
@@ -441,7 +440,7 @@ nav {
   max-width: 48rem;
   min-height: 40rem;
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -46%);
   background-color: var(--color-dark);

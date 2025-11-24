@@ -1,6 +1,6 @@
 {% load static %}
 <header class="header header--loggedIn">
-  <div class="container">
+  <div class="container" style="display: flex; align-items: center">
     <a href="{% url 'home' %}" class="header__logo">
       <img
         src="https://res.cloudinary.com/du238xjtt/image/upload/v1763755373/logo_mtnxgt.png"
@@ -9,7 +9,7 @@
       <img
         src="https://res.cloudinary.com/du238xjtt/image/upload/v1763771852/gym-bud_logo_hjqizz.png"
         alt=""
-        style="width: 50px; height: 50px"
+        style="width: 50px; height: auto"
       />
     </a>
     <form class="header__search" method="get" action="{% url 'home' %}">
